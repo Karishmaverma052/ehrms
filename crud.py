@@ -41,3 +41,6 @@ def mark_attendance(db: Session, att):
 
 def get_attendance(db: Session, emp_id):
     return db.query(Attendance).filter(Attendance.employee_id == emp_id).all()
+
+def get_all_attendance(db: Session):
+    return db.query(Attendance).all()

@@ -55,3 +55,7 @@ def add_attendance(att: schemas.AttendanceCreate, db: Session = Depends(get_db))
 @app.get("/get_attendance/{employee_id}")
 def view_attendance(employee_id: str, db: Session = Depends(get_db)):
     return crud.get_attendance(db, employee_id)
+
+@app.get("/get_all_attendance")
+def view_all_attendance(db: Session = Depends(get_db)):
+    return crud.get_all_attendance(db)

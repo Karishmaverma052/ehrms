@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 # Render will provide DATABASE_URL environment variable
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/ehrms")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://ehrms_user:6stI2ijZBVC5SiiV6DypkEM89yekXREO@dpg-d5lkmf1r0fns73ed5eb0-a:5432/ehrms")
 
 # For Render PostgreSQL compatibility
 if DATABASE_URL and DATABASE_URL.startswith("postgresql://"):

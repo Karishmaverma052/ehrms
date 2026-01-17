@@ -13,7 +13,7 @@ app = FastAPI()
 # Allow both localhost and deployed frontend URL
 allowed_origins = [
     "http://localhost:4200",
-    "http://localhost:3000",
+    "https://ehrmsui.onrender.com",
     os.getenv("FRONTEND_URL", "http://localhost:4200")
 ]
 

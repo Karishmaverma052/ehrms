@@ -6,9 +6,15 @@ from fastapi.middleware.cors import CORSMiddleware
 
 import models, schemas, crud
 
-models.Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
+
+# Create tables on startup
+@app.on_event("startup")
+def startup_event():
+    try:
+        models.Base.metadata.create_all(bind=engine)
+    except Exception as e:
+        print(f"Warning: Could not create tables on startup: {e}")
 
 # Allow both localhost and deployed frontend URL
 allowed_origins = [
